@@ -1,0 +1,32 @@
+name: Registry validation
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Check out trusted base code only
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.event.pull_request.base.sha || github.sha }}
+          persist-credentials: false
+      - name: Fetch pinned validator
+        run: |
+          mkdir validator
+          gh release download v0.4.0-rc.6 --repo "$GITHUB_REPOSITORY" --pattern rhyven-linux-x86_64 --dir validator
+          echo '727f619bb9ed3621e494313366158d6c074d5f7132b26e38e51cabc7abca7bdb  validator/rhyven-linux-x86_64' | sha256sum --check --strict
+          chmod +x validator/rhyven-linux-x86_64
+      - name: Check ownership rules
+        run: python3 scripts/test_authorization.py
+      - name: Validate submitted index and app packages
+        run: python3 scripts/validate.py
