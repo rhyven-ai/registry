@@ -3,5 +3,86 @@
   "publishers": {
     "rhyven": "rhyven-ai"
   },
-  "apps": []
+  "apps": [
+    {
+      "asset_id": 591708821,
+      "description": "Inspect structured pipeline state, logs and artifacts; record retry/cancel intent.",
+      "display_name": "CI Management",
+      "hosting": "local",
+      "name": "rhyven/ci-management",
+      "permissions": [
+        "state.read",
+        "state.write"
+      ],
+      "publisher": "rhyven",
+      "repository": "rhyven-ai/registry",
+      "sha256": "d3be79d2e13fc9ec372118e398f9aa1b9499e6e2e0171ba016e73de5647059e8",
+      "trust": "Unverified",
+      "version": "0.3.0"
+    },
+    {
+      "asset_id": 591708827,
+      "description": "Group error occurrences, track releases, regressions and remediation.",
+      "display_name": "Error Management",
+      "hosting": "local",
+      "name": "rhyven/error-management",
+      "permissions": [
+        "state.read",
+        "state.write"
+      ],
+      "publisher": "rhyven",
+      "repository": "rhyven-ai/registry",
+      "sha256": "736815f8c788349d67bb3ae54ccc840b8c3a7ff497443e9a7d755ec18fff2059",
+      "trust": "Unverified",
+      "version": "0.3.0"
+    },
+    {
+      "asset_id": 591708824,
+      "description": "Track physical assets, locations and retirement without custom runtime code.",
+      "display_name": "Inventory",
+      "hosting": "local",
+      "name": "rhyven/inventory",
+      "permissions": [
+        "state.read",
+        "state.write"
+      ],
+      "publisher": "rhyven",
+      "repository": "rhyven-ai/registry",
+      "sha256": "18ef0c59dc58980b7c0b4c4ca4b20ae10ff98334be8e35ca510a48b3977fdb6f",
+      "trust": "Unverified",
+      "version": "0.3.0"
+    },
+    {
+      "asset_id": 591708823,
+      "description": "Searchable immutable notes, decisions, pitfalls and summaries with correction chains, labels and review dates.",
+      "display_name": "Project Knowledge",
+      "hosting": "local",
+      "name": "rhyven/project-knowledge",
+      "permissions": [
+        "state.read",
+        "state.write"
+      ],
+      "publisher": "rhyven",
+      "repository": "rhyven-ai/registry",
+      "sha256": "6bb0384a526a002d1c0696d600b7e8f01ca0ce753e46e7678493561c12969d80",
+      "trust": "Unverified",
+      "version": "0.4.0"
+    },
+    {
+      "asset_id": 591708825,
+      "description": "Searchable projects, tasks and issues with ownership, work lifecycles, labels, due dates and linked dependencies.",
+      "display_name": "Work Management",
+      "hosting": "local",
+      "name": "rhyven/work-management",
+      "permissions": [
+        "state.read",
+        "state.write"
+      ],
+      "publisher": "rhyven",
+      "repository": "rhyven-ai/registry",
+      "sha256": "c9271b85a29b2eb5f6fe7795be741c7789b90b9ab41eaf464708774bc977b5eb",
+      "trust": "Unverified",
+      "version": "0.4.0"
+    }
+  ]
 }
