@@ -4,6 +4,20 @@ Public app listings and installable packages published by Rhyven. The platform
 source is maintained separately in a private repository. This registry contains
 no platform source archives and does not host customer data or workloads.
 
+## App source and licenses
+
+The source for all seven Rhyven apps, their examples, tests and authoring guides
+is available in [rhyven-ai/apps](https://github.com/rhyven-ai/apps) under
+[Apache-2.0](https://github.com/rhyven-ai/apps/blob/main/LICENSE).
+You may use, modify and redistribute those app materials under that license.
+Third-party dependencies retain their own licenses and notices.
+
+The Rhyven engine/runtime binary is separately licensed and is **not** covered
+by the apps' Apache-2.0 license. Its implementation remains proprietary.
+The app repository has its own history and contains no platform implementation.
+Source candidates can be newer than installable releases; `index.json` remains
+the list of published package versions. Existing package bytes are unchanged.
+
 ## Browse and install
 
 Use Rhyven 0.4.0-rc.6 or later. No GitHub account is needed to browse or download
