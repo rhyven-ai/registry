@@ -15,8 +15,12 @@ Third-party dependencies retain their own licenses and notices.
 
 The engine source is also Apache-2.0; see its
 [license](https://github.com/rhyven-ai/rhyven/blob/main/LICENSE) and dependency notices.
-The current source candidate is 0.4.0-rc.8; the public runtime and registry
-validator are still 0.4.0-rc.6 pending coordinated binary promotion.
+The current runtime and registry validator are 0.4.0-rc.8. Install the signed
+binary from the website:
+
+```sh
+curl -fsSL https://rhyvenai.com/install.sh | bash -s -- --containers
+```
 Source candidates can be newer than installable releases; `index.json` remains
 the list of published package versions. Existing package bytes are unchanged.
 
