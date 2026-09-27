@@ -1,8 +1,9 @@
 # Rhyven app registry
 
 Public app listings and installable packages published by Rhyven. The platform
-source is maintained separately in a private repository. This registry contains
-no platform source archives and does not host customer data or workloads.
+source is available under Apache-2.0 in
+[rhyven-ai/rhyven](https://github.com/rhyven-ai/rhyven). This registry contains
+distribution metadata and app packages; it does not host customer data or workloads.
 
 ## App source and licenses
 
@@ -12,9 +13,10 @@ is available in [rhyven-ai/apps](https://github.com/rhyven-ai/apps) under
 You may use, modify and redistribute those app materials under that license.
 Third-party dependencies retain their own licenses and notices.
 
-The Rhyven engine/runtime binary is separately licensed and is **not** covered
-by the apps' Apache-2.0 license. Its implementation remains proprietary.
-The app repository has its own history and contains no platform implementation.
+The engine source is also Apache-2.0; see its
+[license](https://github.com/rhyven-ai/rhyven/blob/main/LICENSE) and dependency notices.
+The current source candidate is 0.4.0-rc.8; the public runtime and registry
+validator are still 0.4.0-rc.6 pending coordinated binary promotion.
 Source candidates can be newer than installable releases; `index.json` remains
 the list of published package versions. Existing package bytes are unchanged.
 
@@ -84,4 +86,4 @@ package exactly. Do not upload credentials, customer data or platform source.
 Registry validation uses a pinned prebuilt runtime, executes no code from the
 pull request, and does not run container app code. Hashes, schemas, publisher
 ownership and declarative behavior are checked. The validator binary release
-contains executable software, not the private platform source.
+contains executable software. Engine source is maintained in the engine repository.
