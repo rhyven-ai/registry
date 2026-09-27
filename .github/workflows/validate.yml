@@ -23,8 +23,9 @@ jobs:
       - name: Fetch pinned validator
         run: |
           mkdir validator
-          gh release download v0.4.0-rc.6 --repo "$GITHUB_REPOSITORY" --pattern rhyven-linux-x86_64 --dir validator
-          echo '727f619bb9ed3621e494313366158d6c074d5f7132b26e38e51cabc7abca7bdb  validator/rhyven-linux-x86_64' | sha256sum --check --strict
+          curl --fail --silent --show-error --location --proto '=https' --proto-redir '=https' \
+            https://rhyvenai.com/releases/v0.4.0-rc.8/rhyven-linux-x86_64 --output validator/rhyven-linux-x86_64
+          echo 'cf5adad8bfb512bc5201853094ac251c3fa8b4880896f1b05937d2c74fd17ddd  validator/rhyven-linux-x86_64' | sha256sum --check --strict
           chmod +x validator/rhyven-linux-x86_64
       - name: Check ownership rules
         run: python3 scripts/test_authorization.py
