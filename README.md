@@ -10,13 +10,18 @@ Use Rhyven 0.4.0-rc.6 or later. No GitHub account is needed to browse or downloa
 public apps:
 
 ```sh
-rhyven registry-refresh rhyven-ai/registry --anonymous
+rhyven registry-sync rhyven-ai/registry --anonymous
 rhyven search
 rhyven inspect rhyven/work-management
 rhyven install rhyven/work-management
 ```
 
-Review permissions, then add `--accept-permissions` to approve installation.
+`registry-sync` explicitly downloads and validates app manifests for CLI/TUI
+browsing. It does not install apps or pull container images. Review permissions,
+then add `--accept-permissions` to approve installation.
+
+For agent-only discovery, use `rhyven registry-refresh rhyven-ai/registry
+--anonymous` instead; it downloads metadata only.
 Connected agents use `rhyven_categories()`, `rhyven_describe(category)` and
 `rhyven_call(category, function, args)` to browse `rhyven/marketplace`, request
 human approval, install and operate apps. Every app runs in your environment.
