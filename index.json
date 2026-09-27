@@ -83,6 +83,62 @@
       "sha256": "c9271b85a29b2eb5f6fe7795be741c7789b90b9ab41eaf464708774bc977b5eb",
       "trust": "Unverified",
       "version": "0.4.0"
+    },
+    {
+      "asset_id": 591732635,
+      "description": "Durable local channels, threads and agent inboxes with scheduled delivery, leases and acknowledgements.",
+      "display_name": "Messaging",
+      "execution": {
+        "cpus": 1,
+        "driver": "container",
+        "image": "ghcr.io/rhyven-ai/messaging@sha256:7e63981acca4d8833ee988af22acb0d1135d5bd33886825d55bd2cab326b118c",
+        "memory_mb": 128,
+        "mode": "service",
+        "protocol": "rhyven.service/1",
+        "restart_limit": 2,
+        "shutdown_timeout_seconds": 5,
+        "start_policy": "on-demand",
+        "startup_timeout_seconds": 15,
+        "timeout_seconds": 10
+      },
+      "hosting": "local",
+      "name": "rhyven/messaging",
+      "permissions": [
+        "state.read",
+        "state.write",
+        "container.execute",
+        "service.run"
+      ],
+      "publisher": "rhyven",
+      "repository": "rhyven-ai/registry",
+      "sha256": "8372c9e389872bcd9e6aabc45bac23e6d39a1b3601aa614d02ba8c79e69d0296",
+      "trust": "Unverified",
+      "version": "0.1.0"
+    },
+    {
+      "asset_id": 591732636,
+      "description": "Repository survey, language-server symbol/reference indexing and agent-written hierarchical code summaries.",
+      "display_name": "Rhyven Repo Documentation Tool",
+      "execution": {
+        "cpus": 2,
+        "driver": "container",
+        "image": "ghcr.io/rhyven-ai/repo-documentation-tool@sha256:22075bcb77cb44de711be88d210b15476c6aee5e23081a7e612e4443500d787a",
+        "memory_mb": 2048,
+        "protocol": "rhyven.container/1",
+        "timeout_seconds": 300
+      },
+      "hosting": "local",
+      "name": "rhyven/repo-documentation-tool",
+      "permissions": [
+        "state.read",
+        "state.write",
+        "container.execute"
+      ],
+      "publisher": "rhyven",
+      "repository": "rhyven-ai/registry",
+      "sha256": "6c67a456cc00d3c9298e0ddc91c38883334bda869c972c4576d10f1f7627a1cc",
+      "trust": "Unverified",
+      "version": "0.1.0"
     }
   ]
 }
