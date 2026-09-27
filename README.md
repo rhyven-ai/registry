@@ -30,9 +30,22 @@ means no independent certification; it does not mean the app has a different
 publisher. Older Rhyven installations with `official/...` or
 `community/inventory` IDs retain their state and are not renamed automatically.
 
-Rhyven Repo Documentation Tool uses `rhyven/repo-documentation-tool`.
-Container apps are listed only after their required images are anonymously
-pullable. The registry index is the current list of available versions.
+| App | App ID | Execution |
+| --- | --- | --- |
+| Work Management | `rhyven/work-management` | Declarative |
+| Project Knowledge | `rhyven/project-knowledge` | Declarative |
+| Error Management | `rhyven/error-management` | Declarative |
+| CI Management | `rhyven/ci-management` | Declarative |
+| Inventory | `rhyven/inventory` | Declarative |
+| Rhyven Repo Documentation Tool | `rhyven/repo-documentation-tool` | On-demand container |
+| Messaging | `rhyven/messaging` | Persistent service |
+
+Container images are public, pinned to immutable digests, and pulled only after
+installation consent. They require a compatible Docker engine; installation
+and execution are tested on Linux x86-64. The documentation tool analyzes
+imported repository snapshots. Messaging runs under the local supervisor:
+start it with `rhyven daemon start` after installation. The registry index is the
+current list of available versions.
 
 ## Submit an app
 
