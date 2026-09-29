@@ -24,8 +24,8 @@ jobs:
         run: |
           mkdir validator
           curl --fail --silent --show-error --location --proto '=https' --proto-redir '=https' \
-            https://rhyvenai.com/releases/v0.4.0-rc.8/rhyven-linux-x86_64 --output validator/rhyven-linux-x86_64
-          echo 'cf5adad8bfb512bc5201853094ac251c3fa8b4880896f1b05937d2c74fd17ddd  validator/rhyven-linux-x86_64' | sha256sum --check --strict
+            https://github.com/rhyven-ai/rhyven/releases/download/v0.4.0-rc.9/rhyven-linux-x86_64 --output validator/rhyven-linux-x86_64
+          echo 'f4e812171ce51f9665595a935161b8687d4dfbb1d6094dc388fd6758f16e8756  validator/rhyven-linux-x86_64' | sha256sum --check --strict
           chmod +x validator/rhyven-linux-x86_64
       - name: Check ownership rules
         run: python3 scripts/test_authorization.py
