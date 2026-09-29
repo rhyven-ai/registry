@@ -139,6 +139,56 @@
       "sha256": "6c67a456cc00d3c9298e0ddc91c38883334bda869c972c4576d10f1f7627a1cc",
       "trust": "Unverified",
       "version": "0.1.0"
+    },
+    {
+      "asset_id": 596853326,
+      "description": "BM25 file search with cached summaries, Git ignore rules and source hashes. Python and Git; no Docker.",
+      "display_name": "File RAG",
+      "execution": {
+        "driver": "script",
+        "entrypoint": "rhyven_entry.py",
+        "language": "python",
+        "protocol": "rhyven.action/1",
+        "python_version": "3.10",
+        "timeout_seconds": 300
+      },
+      "hosting": "local",
+      "name": "rhyven/file-rag",
+      "permissions": [
+        "state.read",
+        "state.write",
+        "host.execute"
+      ],
+      "publisher": "rhyven",
+      "repository": "rhyven-ai/file-rag",
+      "sha256": "16ff0d6db97f34241ebc25fe1dc084c920a529ba7c4a6f384cf8d3a17a916c27",
+      "trust": "Unverified",
+      "version": "0.2.0"
+    },
+    {
+      "asset_id": 596853425,
+      "description": "Connect an agent to a paired Razorback shell. Typed actions and approval in the terminal. Standalone shell installed separately; no Docker.",
+      "display_name": "Razorback",
+      "execution": {
+        "driver": "script",
+        "entrypoint": "main.py",
+        "language": "python",
+        "protocol": "rhyven.action/1",
+        "python_version": "3.10",
+        "timeout_seconds": 10
+      },
+      "hosting": "local",
+      "name": "rhyven/razorback",
+      "permissions": [
+        "state.read",
+        "state.write",
+        "host.execute"
+      ],
+      "publisher": "rhyven",
+      "repository": "rhyven-ai/razorback",
+      "sha256": "ba321286c74ebaccc04be7b9ddc6ae64857e0452276cfc9d143ef6eb1300f40c",
+      "trust": "Unverified",
+      "version": "1.0.0"
     }
   ]
 }
