@@ -189,6 +189,114 @@
       "sha256": "ba321286c74ebaccc04be7b9ddc6ae64857e0452276cfc9d143ef6eb1300f40c",
       "trust": "Unverified",
       "version": "1.0.0"
+    },
+    {
+      "asset_id": 608226812,
+      "description": "Questions, answers and waiting states for optional starter runners or existing harnesses. No model or Docker required.",
+      "hosting": "local",
+      "name": "rhyven/user-questions",
+      "permissions": [
+        "state.read",
+        "state.write"
+      ],
+      "publisher": "rhyven",
+      "repository": "rhyven-ai/rhyven",
+      "sha256": "dda14c3fd3c5e60500e921f40ef18a98282fc71bccb975e882c66bcb86691e81",
+      "trust": "Unverified",
+      "version": "0.1.0"
+    },
+    {
+      "asset_id": 608228024,
+      "description": "Optional starter harness for users without one. Connect a model API, split goals into phases, save knowledge and pause for user answers. Existing harnesses can skip it.",
+      "hosting": "local",
+      "name": "rhyven/starter-runner",
+      "permissions": [
+        "state.read",
+        "state.write",
+        "container.execute",
+        "service.run",
+        "app.call",
+        "network.connect",
+        "secrets.read"
+      ],
+      "publisher": "rhyven",
+      "repository": "rhyven-ai/rhyven",
+      "sha256": "a4e032ac2e6c212498916b815a22b8a064ee2f9c30fc2282b91cab301f0a7d8a",
+      "trust": "Unverified",
+      "version": "0.1.0",
+      "execution": {
+        "calls": [
+          {
+            "category": "rhyven/work-management",
+            "function": "object_project_create",
+            "version": "0.4.0"
+          },
+          {
+            "category": "rhyven/work-management",
+            "function": "object_task_create",
+            "version": "0.4.0"
+          },
+          {
+            "category": "rhyven/work-management",
+            "function": "object_task_get",
+            "version": "0.4.0"
+          },
+          {
+            "category": "rhyven/work-management",
+            "function": "action_assign",
+            "version": "0.4.0"
+          },
+          {
+            "category": "rhyven/work-management",
+            "function": "action_complete",
+            "version": "0.4.0"
+          },
+          {
+            "category": "rhyven/work-management",
+            "function": "action_block",
+            "version": "0.4.0"
+          },
+          {
+            "category": "rhyven/work-management",
+            "function": "action_resume",
+            "version": "0.4.0"
+          },
+          {
+            "category": "rhyven/project-knowledge",
+            "function": "action_remember",
+            "version": "0.4.0"
+          },
+          {
+            "category": "rhyven/project-knowledge",
+            "function": "object_note_query",
+            "version": "0.4.0"
+          },
+          {
+            "category": "rhyven/user-questions",
+            "function": "action_ask",
+            "version": "0.1.0"
+          },
+          {
+            "category": "rhyven/user-questions",
+            "function": "object_question_get",
+            "version": "0.1.0"
+          }
+        ],
+        "cpus": 1,
+        "driver": "container",
+        "image": "ghcr.io/rhyven-ai/starter-runner@sha256:02e8ea8669e76ebfef8a501cd5f279dac8a640a06fdcf820d2cdcb150ed1e2d8",
+        "memory_mb": 128,
+        "mode": "service",
+        "protocol": "rhyven.service/1",
+        "restart_limit": 2,
+        "secrets": [
+          "RHYVEN_SECRET_MODEL_CONFIG"
+        ],
+        "shutdown_timeout_seconds": 30,
+        "start_policy": "manual",
+        "startup_timeout_seconds": 15,
+        "timeout_seconds": 15
+      }
     }
   ]
 }
