@@ -297,6 +297,37 @@
         "startup_timeout_seconds": 15,
         "timeout_seconds": 15
       }
+    },
+    {
+      "asset_id": 608365528,
+      "description": "Durable local channels, threads and agent inboxes with scheduled delivery, leases and acknowledgements.",
+      "display_name": "Messaging",
+      "execution": {
+        "cpus": 1,
+        "driver": "container",
+        "image": "ghcr.io/rhyven-ai/messaging@sha256:b2353dca7c5597e920b18c2511c6f872386eadc806c86fbe775a4d578d04d144",
+        "memory_mb": 128,
+        "mode": "service",
+        "protocol": "rhyven.service/1",
+        "restart_limit": 2,
+        "shutdown_timeout_seconds": 5,
+        "start_policy": "on-demand",
+        "startup_timeout_seconds": 15,
+        "timeout_seconds": 10
+      },
+      "hosting": "local",
+      "name": "rhyven/messaging",
+      "permissions": [
+        "state.read",
+        "state.write",
+        "container.execute",
+        "service.run"
+      ],
+      "publisher": "rhyven",
+      "repository": "rhyven-ai/rhyven",
+      "sha256": "608597e19ad7ff32b73c92f7793aa37c6e4e9440409a19a25a88b043652740c4",
+      "trust": "Unverified",
+      "version": "0.1.1"
     }
   ]
 }
