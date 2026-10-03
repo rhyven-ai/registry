@@ -328,6 +328,31 @@
       "sha256": "608597e19ad7ff32b73c92f7793aa37c6e4e9440409a19a25a88b043652740c4",
       "trust": "Unverified",
       "version": "0.1.1"
+    },
+    {
+      "asset_id": 608417153,
+      "description": "Repository survey, language-server symbol/reference indexing and agent-written hierarchical code summaries.",
+      "display_name": "Rhyven Repo Documentation Tool",
+      "execution": {
+        "cpus": 2,
+        "driver": "container",
+        "image": "ghcr.io/rhyven-ai/repo-documentation-tool@sha256:b9b8bb60ed3e285f1be1cddba7e09f15ad81f72e262e4214f0564c41382ad8a7",
+        "memory_mb": 2048,
+        "protocol": "rhyven.container/1",
+        "timeout_seconds": 300
+      },
+      "hosting": "local",
+      "name": "rhyven/repo-documentation-tool",
+      "permissions": [
+        "state.read",
+        "state.write",
+        "container.execute"
+      ],
+      "publisher": "rhyven",
+      "repository": "rhyven-ai/rhyven",
+      "sha256": "971b1afbedaa689c51772b0a5a6de180a74c7a039fbda4babf94f518018e7ac5",
+      "trust": "Unverified",
+      "version": "0.1.1"
     }
   ]
 }
