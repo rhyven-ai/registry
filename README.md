@@ -7,7 +7,7 @@ distribution metadata and app packages; it does not host customer data or worklo
 
 ## App source and licenses
 
-The source for all seven Rhyven apps, their examples, tests and authoring guides
+The source for Rhyven apps, their examples, tests and authoring guides
 is available in [rhyven-ai/apps](https://github.com/rhyven-ai/apps) under
 [Apache-2.0](https://github.com/rhyven-ai/apps/blob/main/LICENSE).
 You may use, modify and redistribute those app materials under that license.
@@ -15,7 +15,7 @@ Third-party dependencies retain their own licenses and notices.
 
 The engine source is also Apache-2.0; see its
 [license](https://github.com/rhyven-ai/rhyven/blob/main/LICENSE) and dependency notices.
-The current runtime and registry validator are 0.4.0-rc.8. Install the signed
+The current runtime and registry validator are 0.5.4. Install the signed
 binary from the website:
 
 ```sh
