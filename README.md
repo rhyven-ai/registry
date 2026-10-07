@@ -15,7 +15,7 @@ Third-party dependencies retain their own licenses and notices.
 
 The engine source is also Apache-2.0; see its
 [license](https://github.com/rhyven-ai/rhyven/blob/main/LICENSE) and dependency notices.
-The current runtime and registry validator are 0.5.4. Install the signed
+The current runtime and registry validator are 0.5.5. Install the signed
 binary from the website:
 
 ```sh
