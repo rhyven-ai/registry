@@ -24,10 +24,10 @@ jobs:
         run: |
           mkdir validator
           curl --fail --silent --show-error --location --proto '=https' --proto-redir '=https' \
-            https://github.com/rhyven-ai/rhyven/releases/download/v0.5.4/rhyven-linux-x86_64 --output validator/rhyven-linux-x86_64
-          echo 'a7a7a1f6b8dfd44d9eb7d23d5255065c5a96280b9d258fb3b049b24069d62022  validator/rhyven-linux-x86_64' | sha256sum --check --strict
+            https://github.com/rhyven-ai/rhyven/releases/download/v0.5.5/rhyven-linux-x86_64 --output validator/rhyven-linux-x86_64
+          echo '71e5290d48b84e3bde3931e1e18a3a24f260db73d839ac20937769a8b80052ea  validator/rhyven-linux-x86_64' | sha256sum --check --strict
           chmod +x validator/rhyven-linux-x86_64
-          test "$(validator/rhyven-linux-x86_64 --version)" = 'rhyven 0.5.4'
+          test "$(validator/rhyven-linux-x86_64 --version)" = 'rhyven 0.5.5'
       - name: Check ownership rules
         run: python3 scripts/test_authorization.py
       - name: Validate submitted index and app packages
