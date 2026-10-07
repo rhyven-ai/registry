@@ -353,6 +353,74 @@
       "sha256": "971b1afbedaa689c51772b0a5a6de180a74c7a039fbda4babf94f518018e7ac5",
       "trust": "Unverified",
       "version": "0.1.1"
+    },
+    {
+      "asset_id": 620099351,
+      "description": "Run versioned checks on supplied project snapshots; save reports and reuse improved policies. Python standard library; no Docker.",
+      "display_name": "Preflight Checker",
+      "execution": {
+        "driver": "script",
+        "entrypoint": "main.py",
+        "environment": "isolated",
+        "language": "python",
+        "protocol": "rhyven.action/1",
+        "python_version": "3.10",
+        "timeout_seconds": 30
+      },
+      "hosting": "local",
+      "name": "rhyven/preflight-checker",
+      "permissions": [
+        "state.read",
+        "state.write",
+        "host.execute"
+      ],
+      "publisher": "rhyven",
+      "repository": "rhyven-ai/apps",
+      "sha256": "41cf7df99c12f03625877ac920070fb2f55dc88a58e760519b69eed0c0133c4a",
+      "trust": "Unverified",
+      "version": "0.1.0"
+    },
+    {
+      "asset_id": 620099354,
+      "description": "Track failures, preserve reproducible regression fixtures and link fixes to evaluator evidence. Declarative; no Python or Docker.",
+      "display_name": "Failure-to-Regression",
+      "hosting": "local",
+      "name": "rhyven/failure-to-regression",
+      "permissions": [
+        "state.read",
+        "state.write"
+      ],
+      "publisher": "rhyven",
+      "repository": "rhyven-ai/apps",
+      "sha256": "fdd26ef4c5a2bb3f6e69ad1cf24fbc5cffe3f079a1b78987c92b252f5bef2d28",
+      "trust": "Unverified",
+      "version": "0.1.0"
+    },
+    {
+      "asset_id": 620099350,
+      "description": "Compare tool results against immutable project fixtures; catch regressions and retain evaluation history. Python standard library; no Docker.",
+      "display_name": "Workflow Evaluator",
+      "execution": {
+        "driver": "script",
+        "entrypoint": "main.py",
+        "environment": "isolated",
+        "language": "python",
+        "protocol": "rhyven.action/1",
+        "python_version": "3.10",
+        "timeout_seconds": 30
+      },
+      "hosting": "local",
+      "name": "rhyven/workflow-evaluator",
+      "permissions": [
+        "state.read",
+        "state.write",
+        "host.execute"
+      ],
+      "publisher": "rhyven",
+      "repository": "rhyven-ai/apps",
+      "sha256": "1e2fc7dfa34eb068d4e161a079c120e354987d589bb7f1877477340972fd94bf",
+      "trust": "Unverified",
+      "version": "0.1.0"
     }
   ]
 }

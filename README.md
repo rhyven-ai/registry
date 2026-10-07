@@ -19,14 +19,14 @@ The current runtime and registry validator are 0.5.5. Install the signed
 binary from the website:
 
 ```sh
-curl -fsSL https://rhyvenai.com/install.sh | bash -s -- --containers
+curl -fsSL https://rhyvenai.com/install.sh | bash
 ```
 Source candidates can be newer than installable releases; `index.json` remains
 the list of published package versions. Existing package bytes are unchanged.
 
 ## Browse and install
 
-Use Rhyven 0.4.0-rc.6 or later. No GitHub account is needed to browse or download
+Use Rhyven 0.5.5 or later for the current app catalog. No GitHub account is needed to browse or download
 public apps:
 
 ```sh
@@ -64,6 +64,13 @@ publisher. Older Rhyven installations with `official/...` or
 | Inventory | `rhyven/inventory` | Declarative |
 | Rhyven Repo Documentation Tool | `rhyven/repo-documentation-tool` | On-demand container |
 | Messaging | `rhyven/messaging` | Persistent service |
+| User Questions | `rhyven/user-questions` | Declarative |
+| Starter Runner | `rhyven/starter-runner` | Persistent service |
+| File RAG | `rhyven/file-rag` | Native Python script |
+| Razorback (in progress) | `rhyven/razorback` | Native Python connection app |
+| Preflight Checker | `rhyven/preflight-checker` | Native Python script |
+| Failure-to-Regression | `rhyven/failure-to-regression` | Declarative |
+| Workflow Evaluator | `rhyven/workflow-evaluator` | Native Python script |
 
 Container images are public, pinned to immutable digests, and pulled only after
 installation consent. They require a compatible Docker engine; installation
@@ -71,6 +78,11 @@ and execution are tested on Linux x86-64. The documentation tool analyzes
 imported repository snapshots. Messaging runs under the local supervisor:
 start it with `rhyven daemon start` after installation. The registry index is the
 current list of available versions.
+
+The [quality toolkit example](https://github.com/rhyven-ai/apps/tree/main/demos/quality-toolkit)
+shows three apps recording a missed failure, improving a check policy and comparing
+both versions on the same fixtures. These packages need no Docker. Native apps
+require Python 3.10+ and permission to execute unsandboxed code as the local user.
 
 ## Submit an app
 
