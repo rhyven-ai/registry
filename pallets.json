@@ -1,0 +1,15 @@
+{
+  "format": 1,
+  "pallets": [
+    {
+      "name": "rhyven/text-kit",
+      "version": "0.1.0",
+      "description": "Normalize text and prepare consistent document titles and ASCII URL slugs.",
+      "language": "python",
+      "license": "Apache-2.0",
+      "repository": "rhyven-ai/text-kit",
+      "asset_id": 623303231,
+      "sha256": "3ba33172e55ad6038c0a571a863944b9f5a3c56c4d7bc7ef66a6d60b531c3eff"
+    }
+  ]
+}

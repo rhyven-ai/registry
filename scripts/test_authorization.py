@@ -4,7 +4,7 @@ import os
 import tempfile
 from pathlib import Path
 from unittest.mock import patch
-from validate import authorize, main
+from validate import authorize, main, attach_pallets
 
 
 class AuthorizationTests(unittest.TestCase):
@@ -15,6 +15,22 @@ class AuthorizationTests(unittest.TestCase):
         authorize(base, new, "maintainer", "maintainer")
         with self.assertRaises(ValueError):
             authorize(base, new, "attacker", "maintainer")
+
+    def test_sidecar_does_not_change_legacy_app_index(self):
+        base = {"format": 1, "publishers": {}, "apps": []}
+        merged = attach_pallets(base, {"format": 1, "pallets": []})
+        self.assertNotIn("pallets", base)
+        self.assertEqual(merged["apps"], base["apps"])
+        with self.assertRaises(ValueError):
+            attach_pallets(base, {"format": 2, "pallets": []})
+
+    def test_pallet_submission_requires_namespace_owner(self):
+        base = {"publishers": {"alice": "alice"}, "apps": [], "pallets": []}
+        proposed = {**base, "pallets": [{"name": "alice/text-kit", "version": "0.1.0"}]}
+        authorize(base, proposed, "alice", "maintainer")
+        authorize(base, proposed, "maintainer", "maintainer")
+        with self.assertRaises(ValueError):
+            authorize(base, proposed, "attacker", "maintainer")
 
     def test_namespace_registration_needs_maintainer(self):
         base = {"publishers": {}, "apps": []}
@@ -34,7 +50,7 @@ class AuthorizationTests(unittest.TestCase):
             previous = Path.cwd()
             try:
                 os.chdir(path)
-                with patch.dict(os.environ, {"GITHUB_EVENT_PATH": str(event), "GITHUB_REPOSITORY_OWNER": "rhyven-ai"}), patch("validate.contents", return_value=proposed), patch("validate.subprocess.run") as validate:
+                with patch.dict(os.environ, {"GITHUB_EVENT_PATH": str(event), "GITHUB_REPOSITORY_OWNER": "rhyven-ai"}), patch("validate.contents", return_value=proposed), patch("validate.optional_pallets", return_value=None), patch("validate.subprocess.run") as validate:
                     for actor in ("scornsaber", "attacker"):
                         event.write_text(json.dumps({"pull_request": {"user": {"login": actor}, "head": {"repo": {"full_name": "company/contribution"}, "sha": "abc"}}}))
                         with self.assertRaises(ValueError):
