@@ -103,3 +103,17 @@ Registry validation uses a pinned prebuilt runtime, executes no code from the
 pull request, and does not run container app code. Hashes, schemas, publisher
 ownership and declarative behavior are checked. The validator binary release
 contains executable software. Engine source is maintained in the engine repository.
+
+## Pallet libraries (Rhyven 0.6.0+)
+
+Pallets are portable source libraries, not installed apps. Their listings live in
+`pallets.json` (`{"format":1,"pallets":[...]}`), keeping `index.json` compatible
+with older app-only clients. Publisher namespace ownership is shared with the
+app registry and enforced for both kinds of submission.
+
+Each entry pins name, version, description, language, open-source license, source
+repository, GitHub release asset ID and SHA-256. The validator downloads and checks
+source without executing it. Accepted versions cannot change or disappear.
+
+See [Text Kit](https://github.com/rhyven-ai/text-kit) and the
+[pallet publishing guide](https://github.com/rhyven-ai/rhyven/blob/main/docs/portable-pallets.md).
