@@ -24,13 +24,14 @@ class AuthorizationTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             attach_pallets(base, {"format": 2, "pallets": []})
 
-    def test_pallet_submission_requires_namespace_owner(self):
-        base = {"publishers": {"alice": "alice"}, "apps": [], "pallets": []}
-        proposed = {**base, "pallets": [{"name": "alice/text-kit", "version": "0.1.0"}]}
-        authorize(base, proposed, "alice", "maintainer")
-        authorize(base, proposed, "maintainer", "maintainer")
-        with self.assertRaises(ValueError):
-            authorize(base, proposed, "attacker", "maintainer")
+    def test_retired_pallets_are_preserved_but_not_submitted(self):
+        entry = {"name": "alice/text-kit", "version": "0.1.0"}
+        base = {"publishers": {"alice": "alice"}, "apps": [], "pallets": [entry]}
+        authorize(base, dict(base), "alice", "maintainer")
+        for actor in ("alice", "maintainer", "attacker"):
+            for entries in ([], [entry, {**entry, "version": "0.2.0"}], [{**entry, "description": "changed"}]):
+                with self.assertRaises(ValueError):
+                    authorize(base, {**base, "pallets": entries}, actor, "maintainer")
 
     def test_namespace_registration_needs_maintainer(self):
         base = {"publishers": {}, "apps": []}

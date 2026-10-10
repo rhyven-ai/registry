@@ -15,7 +15,7 @@ Third-party dependencies retain their own licenses and notices.
 
 The engine source is also Apache-2.0; see its
 [license](https://github.com/rhyven-ai/rhyven/blob/main/LICENSE) and dependency notices.
-The current runtime and registry validator are 0.5.5. Install the signed
+The current runtime and registry validator are 0.8.0. Install the signed
 binary from the website:
 
 ```sh
@@ -26,7 +26,7 @@ the list of published package versions. Existing package bytes are unchanged.
 
 ## Browse and install
 
-Use Rhyven 0.5.5 or later for the current app catalog. No GitHub account is needed to browse or download
+Use Rhyven 0.8.0 or later for the current app catalog. No GitHub account is needed to browse or download
 public apps:
 
 ```sh
@@ -57,6 +57,9 @@ publisher. Older Rhyven installations with `official/...` or
 
 | App | App ID | Execution |
 | --- | --- | --- |
+| Design Review | `rhyven/design-review` | Native Python script |
+| Change Verifier | `rhyven/change-verifier` | Persistent service |
+| Customer Onboarding Monitor | `rhyven/onboarding-monitor` | Persistent service |
 | Work Management | `rhyven/work-management` | Declarative |
 | Project Knowledge | `rhyven/project-knowledge` | Declarative |
 | Error Management | `rhyven/error-management` | Declarative |
@@ -104,16 +107,8 @@ pull request, and does not run container app code. Hashes, schemas, publisher
 ownership and declarative behavior are checked. The validator binary release
 contains executable software. Engine source is maintained in the engine repository.
 
-## Pallet libraries (Rhyven 0.6.0+)
+## Historical pallet listings
 
-Pallets are portable source libraries, not installed apps. Their listings live in
-`pallets.json` (`{"format":1,"pallets":[...]}`), keeping `index.json` compatible
-with older app-only clients. Publisher namespace ownership is shared with the
-app registry and enforced for both kinds of submission.
-
-Each entry pins name, version, description, language, open-source license, source
-repository, GitHub release asset ID and SHA-256. The validator downloads and checks
-source without executing it. Accepted versions cannot change or disappear.
-
-See [Text Kit](https://github.com/rhyven-ai/text-kit) and the
-[pallet publishing guide](https://github.com/rhyven-ai/rhyven/blob/main/docs/portable-pallets.md).
+Pallet tooling is retired in Rhyven 0.8.0. The existing `pallets.json` sidecar
+and release assets remain available to older clients; new pallet submissions
+are not accepted. Complete apps and app workflows remain supported.
