@@ -421,6 +421,94 @@
       "sha256": "1e2fc7dfa34eb068d4e161a079c120e354987d589bb7f1877477340972fd94bf",
       "trust": "Unverified",
       "version": "0.1.0"
+    },
+    {
+      "asset_id": 628601366,
+      "description": "Collect short proposals from your agent\u2019s reviewers and record its decision.",
+      "display_name": "Design Review",
+      "execution": {
+        "driver": "script",
+        "entrypoint": "main.py",
+        "environment": "isolated",
+        "language": "python",
+        "protocol": "rhyven.action/1",
+        "python_version": "3.10",
+        "timeout_seconds": 30
+      },
+      "hosting": "local",
+      "name": "rhyven/design-review",
+      "permissions": [
+        "state.read",
+        "state.write",
+        "host.execute"
+      ],
+      "publisher": "rhyven",
+      "repository": "rhyven-ai/rhyven",
+      "sha256": "d6010ab3dec144314f3e48188b0d7d2e07f97cb944e6d6f8476cb33ab155ee0d",
+      "trust": "Unverified",
+      "version": "0.1.0"
+    },
+    {
+      "asset_id": 628605339,
+      "description": "Run the same Python regression test before and after a change.",
+      "display_name": "Change Verifier",
+      "execution": {
+        "cpus": 1,
+        "driver": "container",
+        "image": "ghcr.io/rhyven-ai/change-verifier@sha256:7edc6adcede769b09eb8965e1997d5235c580530c94a0161706fce6b2b7a8582",
+        "memory_mb": 512,
+        "mode": "service",
+        "protocol": "rhyven.service/1",
+        "restart_limit": 2,
+        "shutdown_timeout_seconds": 5,
+        "start_policy": "on-demand",
+        "startup_timeout_seconds": 15,
+        "timeout_seconds": 10
+      },
+      "hosting": "local",
+      "name": "rhyven/change-verifier",
+      "permissions": [
+        "state.read",
+        "state.write",
+        "container.execute",
+        "service.run"
+      ],
+      "publisher": "rhyven",
+      "repository": "rhyven-ai/rhyven",
+      "sha256": "9aeec12381f014d9642c67c46c3c164cdd7039ec2c986a21506b5f9ae582560f",
+      "trust": "Unverified",
+      "version": "0.1.0"
+    },
+    {
+      "asset_id": 628606913,
+      "description": "Track customer documents, replies and deadlines for an agent to review.",
+      "display_name": "Customer Onboarding Monitor",
+      "execution": {
+        "cpus": 1,
+        "driver": "container",
+        "image": "ghcr.io/rhyven-ai/onboarding-monitor@sha256:5a5802ae03fba2d8065f24fc02e4d2c37f65947b2b6ee802e3726a140a21237e",
+        "memory_mb": 128,
+        "mode": "service",
+        "protocol": "rhyven.service/1",
+        "restart_limit": 2,
+        "shutdown_timeout_seconds": 5,
+        "start_policy": "on-demand",
+        "startup_timeout_seconds": 15,
+        "timeout_seconds": 10
+      },
+      "hosting": "local",
+      "name": "rhyven/onboarding-monitor",
+      "permissions": [
+        "state.read",
+        "state.write",
+        "container.execute",
+        "service.run"
+      ],
+      "publisher": "rhyven",
+      "repository": "rhyven-ai/rhyven",
+      "sha256": "f2c4400fdf6cdad7aec85c68693907c849f48ab8935bbb74f99b5013c591dcd7",
+      "trust": "Unverified",
+      "version": "0.1.0"
     }
   ]
 }

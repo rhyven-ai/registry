@@ -38,7 +38,9 @@ def optional_pallets(repository, ref):
 def authorize(base, proposed, actor, maintainer):
     if proposed.get("publishers") != base.get("publishers") and actor != maintainer:
         raise ValueError("Only the registry maintainer can register publisher namespaces")
-    for kind in ("apps", "pallets"):
+    if proposed.get("pallets", []) != base.get("pallets", []):
+        raise ValueError("Pallet submissions are retired; historical entries must remain unchanged")
+    for kind in ("apps",):
         old = {(e["name"], e["version"]): e for e in base.get(kind, [])}
         for entry in proposed.get(kind, []):
             if old.get((entry["name"], entry["version"])) == entry:
