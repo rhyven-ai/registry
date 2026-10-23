@@ -15,7 +15,7 @@ Third-party dependencies retain their own licenses and notices.
 
 The engine source is also Apache-2.0; see its
 [license](https://github.com/rhyven-ai/rhyven/blob/main/LICENSE) and dependency notices.
-The current runtime and registry validator are 0.8.0. Install the signed
+The current runtime and registry validator are 0.9.0. Install the signed
 binary from the website:
 
 ```sh
@@ -69,7 +69,7 @@ publisher. Older Rhyven installations with `official/...` or
 | Messaging | `rhyven/messaging` | Persistent service |
 | User Questions | `rhyven/user-questions` | Declarative |
 | Starter Runner | `rhyven/starter-runner` | Persistent service |
-| File RAG | `rhyven/file-rag` | Native Python script |
+| Wobbegong | `rhyven/file-rag` | Native Python script |
 | Razorback (in progress) | `rhyven/razorback` | Native Python connection app |
 | Preflight Checker | `rhyven/preflight-checker` | Native Python script |
 | Failure-to-Regression | `rhyven/failure-to-regression` | Declarative |
