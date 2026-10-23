@@ -75,6 +75,12 @@ publisher. Older Rhyven installations with `official/...` or
 | Failure-to-Regression | `rhyven/failure-to-regression` | Declarative |
 | Workflow Evaluator | `rhyven/workflow-evaluator` | Native Python script |
 
+Wobbegong automatically scans eligible files in the selected folder during each
+requested indexing run. Once indexing succeeds, your agent can immediately search
+and read matching files through Rhyven. The app scans imported source snapshots:
+use `put_files`, then `index` or `summarize`. Reimport changes and rerun indexing
+to refresh; no background watcher runs.
+
 Container images are public, pinned to immutable digests, and pulled only after
 installation consent. They require a compatible Docker engine; installation
 and execution are tested on Linux x86-64. The documentation tool analyzes
