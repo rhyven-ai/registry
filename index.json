@@ -509,6 +509,31 @@
       "sha256": "f2c4400fdf6cdad7aec85c68693907c849f48ab8935bbb74f99b5013c591dcd7",
       "trust": "Unverified",
       "version": "0.1.0"
+    },
+    {
+      "asset_id": 670597690,
+      "description": "Wobbegong searches files using BM25, cached summaries and Git ignore rules. Runs locally with Python and Git.",
+      "display_name": "Wobbegong",
+      "execution": {
+        "driver": "script",
+        "entrypoint": "rhyven_entry.py",
+        "language": "python",
+        "protocol": "rhyven.action/1",
+        "python_version": "3.10",
+        "timeout_seconds": 300
+      },
+      "hosting": "local",
+      "name": "rhyven/file-rag",
+      "permissions": [
+        "state.read",
+        "state.write",
+        "host.execute"
+      ],
+      "publisher": "rhyven",
+      "repository": "rhyven-ai/file-rag",
+      "sha256": "c3ac3dc3f6a4f7568114881a1aab693e12074428d3fd462c717eed988b90ab1e",
+      "trust": "Unverified",
+      "version": "0.3.0"
     }
   ]
 }
