@@ -559,6 +559,57 @@
       "sha256": "0d0913013fdd427149e82a295d6cdfcae196281b3bd187713265f84c5e78ca7a",
       "trust": "Unverified",
       "version": "0.3.1"
+    },
+    {
+      "asset_id": 768857955,
+      "description": "Collect short proposals from your agent\u2019s reviewers and record its decision.",
+      "display_name": "Design Review",
+      "execution": {
+        "driver": "script",
+        "entrypoint": "main.py",
+        "environment": "isolated",
+        "language": "python",
+        "protocol": "rhyven.action/1",
+        "python_version": "3.10",
+        "timeout_seconds": 30
+      },
+      "hosting": "local",
+      "name": "rhyven/design-review",
+      "permissions": [
+        "state.read",
+        "state.write",
+        "host.execute"
+      ],
+      "publisher": "rhyven",
+      "repository": "rhyven-ai/rhyven",
+      "sha256": "8f2221b61ee68804ab5bb175059b0e81b514fba524b317bd146d1042d45fc023",
+      "trust": "Unverified",
+      "version": "0.1.1"
+    },
+    {
+      "asset_id": 768828998,
+      "description": "Collect selected repository files and prepare optional summaries. Export snapshots to Wobbegong Collection Search for manual lookup and automatic prompt enrichment.",
+      "display_name": "Repository File Ingestion",
+      "execution": {
+        "driver": "script",
+        "entrypoint": "rhyven_entry.py",
+        "language": "python",
+        "protocol": "rhyven.action/1",
+        "python_version": "3.10",
+        "timeout_seconds": 300
+      },
+      "hosting": "local",
+      "name": "rhyven/file-rag",
+      "permissions": [
+        "state.read",
+        "state.write",
+        "host.execute"
+      ],
+      "publisher": "rhyven",
+      "repository": "rhyven-ai/file-rag",
+      "sha256": "66b282c8de881692c6f572d60ed5a51d205560ec325c5fcae2d40bfe2b7c713d",
+      "trust": "Unverified",
+      "version": "0.4.0"
     }
   ]
 }

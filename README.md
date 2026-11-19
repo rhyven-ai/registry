@@ -69,17 +69,13 @@ publisher. Older Rhyven installations with `official/...` or
 | Messaging | `rhyven/messaging` | Persistent service |
 | User Questions | `rhyven/user-questions` | Declarative |
 | Starter Runner | `rhyven/starter-runner` | Persistent service |
-| Wobbegong | `rhyven/file-rag` | Native Python script |
+| Repository File Ingestion (published as Wobbegong in 0.3.x) | `rhyven/file-rag` | Native Python script |
 | Razorback (in progress) | `rhyven/razorback` | Native Python connection app |
 | Preflight Checker | `rhyven/preflight-checker` | Native Python script |
 | Failure-to-Regression | `rhyven/failure-to-regression` | Declarative |
 | Workflow Evaluator | `rhyven/workflow-evaluator` | Native Python script |
 
-Wobbegong automatically scans eligible files in the selected folder during each
-requested indexing run. Once indexing succeeds, your agent can immediately search
-and read matching files through Rhyven. The app scans imported source snapshots:
-use `put_files`, then `index` or `summarize`. Reimport changes and rerun indexing
-to refresh; no background watcher runs.
+Repository File Ingestion collects selected repository snapshots and offers optional file summaries. The 0.4.0 app can export those files to **Wobbegong Collection Search**, the index built into Rhyven 0.9.5 for cited search and prompt enrichment. Call `action_put_files`, then run `rhyven --collection NAME wobbegong ingest-repository REPOSITORY`. Repeat the import after edits and deletions. The app’s own file-level `index` and `search` actions remain available. The registry index identifies the published version.
 
 Container images are public, pinned to immutable digests, and pulled only after
 installation consent. They require a compatible Docker engine; installation
